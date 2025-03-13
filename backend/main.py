@@ -133,6 +133,10 @@ def preprocess_image(file_path):
     
     return img
 
+@app.route('/', methods=['GET'])
+def some():
+    return "Running"
+
 # Detection endpoints
 @app.route('/detect/audio', methods=['POST'])
 def detect_from_audio():
@@ -143,7 +147,7 @@ def detect_from_audio():
     file = request.files['file']
     if file.filename == '':
         return jsonify({'error': 'No file selected'}), 400
-    
+    print("We are here")
     if file and allowed_file(file.filename):
         # Save the uploaded file
         filename = secure_filename(file.filename)
@@ -153,13 +157,13 @@ def detect_from_audio():
         try:
             # Extract features
             features = extract_audio_features(file_path)
-            
+            print(features)
             # Scale features
             scaled_features = audio_scaler.transform(features)
-            
+            print("sca", scaled_features)
             # Make prediction
             prediction = audio_model.predict_proba(scaled_features)[0][1]
-            
+            print(prediction)
             # Clean up file
             os.remove(file_path)
             
@@ -186,6 +190,7 @@ def detect_from_spiral():
         return jsonify({'error': 'No file provided'}), 400
     
     file = request.files['file']
+    print("file", file)
     if file.filename == '':
         return jsonify({'error': 'No file selected'}), 400
     
@@ -201,7 +206,7 @@ def detect_from_spiral():
             
             # Make prediction
             prediction = spiral_model.predict(img)[0][0]
-            
+            print(prediction)
             # Clean up file
             os.remove(file_path)
             
@@ -256,4 +261,4 @@ if __name__ == '__main__':
     os.makedirs('models', exist_ok=True)
     
     # For development
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=8000)

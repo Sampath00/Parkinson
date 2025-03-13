@@ -67,7 +67,7 @@ export const Overview = () => {
 
     try {
       const endpoint =
-        fileType === "voice" ? "/predict/voice" : "/predict/image";
+        fileType === "voice" ? "/detect/audio" : "/detect/spiral";
       const response = await axios.post(
         `http://localhost:8000${endpoint}`,
         formData,
