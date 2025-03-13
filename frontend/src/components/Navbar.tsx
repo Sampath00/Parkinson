@@ -1,11 +1,20 @@
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList, NavigationMenuLink } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
+import logo from "../../public/reshot-icon-brain-101.svg"
 
 const Navbar = () => {
   return (
-    <nav className="p-4 border-b">
+    <nav className="p-4 border-b fixed z-50 bg-white w-full">
+      
       <NavigationMenu>
         <NavigationMenuList className="space-x-6 flex">
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild>
+            <Link to="/">
+              <img src={logo} alt="Logo" className="h-8" />
+            </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink asChild>
               <Link to="/" className="text-lg font-medium hover:text-blue-500">Overview</Link>

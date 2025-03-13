@@ -1,97 +1,85 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Separator } from "@/components/ui/separator";
-import { Badge } from "@/components/ui/badge";
-import CauseImage from '../assets/CausesImg.webp';
-import { Button } from "@/components/ui/button";
+import CauseImage from "../assets/CausesImg.webp";
 
 export const Causes = () => {
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-6">
-      <Card className="shadow-xl border border-gray-300 bg-white rounded-lg">
-        <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-gray-900">
-            Causes of Parkinson’s Disease
-          </CardTitle>
-          <p className="text-gray-600 text-sm">Understanding the factors behind Parkinson’s</p>
-        </CardHeader>
-
-        <CardContent className="space-y-6">
-          {/* Image with Aspect Ratio */}
-          <AspectRatio ratio={16 / 9} className="rounded-lg overflow-hidden">
+    <>
+      <div className="w-full p-6 space-y-8 mt-16 flex flex-row items-center gap-5">
+        <Card className="w-1/2 mb-0 shadow-xl border border-gray-300 bg-gradient-to-r from-purple-600 to-blue-900 text-white text-center p-[51px] rounded-lg">
+          <CardHeader>
+            <CardTitle className="text-3xl font-bold">
+              Causes of Parkinson’s Disease
+            </CardTitle>
+            <p className="text-lg mt-3">
+              Understanding the factors behind Parkinson’s
+            </p>
+          </CardHeader>
+          <CardContent>
+            <AspectRatio ratio={16 / 9} className="rounded-lg overflow-hidden">
               <img
                 src={CauseImage}
-                alt="Brain health"
-                className="w-full h-full"
+                alt="AI Diagnosis"
+                className="w-full h-full object-fit"
               />
-          </AspectRatio>
-
-          {/* Description */}
+            </AspectRatio>
+          </CardContent>
+        </Card>
+        <Card className="w-1/2 shadow-lg border border-gray-200 bg-white rounded-lg p-6">
           <p className="text-lg text-gray-700 leading-relaxed">
-            Parkinson’s disease is caused by the progressive loss of <strong>dopamine-producing neurons</strong> in the brain.
-            While the exact cause remains unknown, various <strong>genetic and environmental factors</strong> contribute.
+          Parkinson’s disease arises from dopamine neuron loss, with genetic and environmental influences
           </p>
-
-          <Separator />
-
-          {/* List of Causes */}
           <div className="space-y-4">
-            <div className="flex items-start gap-3">
-              <Badge variant="outline" className="text-blue-600 bg-blue-100">🧬 Genetic Mutations</Badge>
-              <p className="text-gray-700">
-                Some <strong>inherited genetic mutations</strong> may contribute, though most cases are <strong>sporadic</strong>.
-              </p>
-            </div>
+            <p className="text-blue-600 font-semibold">
+              Genetic Mutations:{" "}
+              <span className="text-gray-700 font-normal">
+                Some inherited genetic mutations may contribute, though most
+                cases are sporadic.
+              </span>
+            </p>
 
-            <div className="flex items-start gap-3">
-              <Badge variant="outline" className="text-green-600 bg-green-100">🌍 Environmental Factors</Badge>
-              <p className="text-gray-700">
-                Exposure to <strong>toxins, pesticides, or heavy metals</strong> may increase the risk.
-              </p>
-            </div>
+            <p className="text-green-600 font-semibold">
+              Environmental Factors:{" "}
+              <span className="text-gray-700 font-normal">
+                Exposure to toxins, pesticides, or heavy metals may increase the
+                risk.
+              </span>
+            </p>
 
-            <div className="flex items-start gap-3">
-              <Badge variant="outline" className="text-purple-600 bg-purple-100">🧠 Dopamine Loss</Badge>
-              <p className="text-gray-700">
-                Damage to <strong>dopamine-producing cells</strong> in the brain plays a central role.
-              </p>
-            </div>
+            <p className="text-purple-600 font-semibold">
+              Dopamine Loss:{" "}
+              <span className="text-gray-700 font-normal">
+                Damage to dopamine-producing cells in the brain plays a central
+                role.
+              </span>
+            </p>
 
-            <div className="flex items-start gap-3">
-              <Badge variant="outline" className="text-yellow-600 bg-yellow-100">⏳ Aging</Badge>
-              <p className="text-gray-700">
-                A significant risk factor, as <strong>neuron degeneration naturally</strong> occurs over time.
-              </p>
-            </div>
+            <p className="text-yellow-600 font-semibold">
+              Aging:{" "}
+              <span className="text-gray-700 font-normal">
+                A significant risk factor, as neuron degeneration naturally
+                occurs over time.
+              </span>
+            </p>
 
-            <div className="flex items-start gap-3">
-              <Badge variant="outline" className="text-red-600 bg-red-100">🔥 Oxidative Stress</Badge>
-              <p className="text-gray-700">
-                <strong>Mitochondrial dysfunction</strong> and oxidative stress contribute to neuronal damage.
-              </p>
-            </div>
+            <p className="text-red-600 font-semibold">
+              Oxidative Stress:{" "}
+              <span className="text-gray-700 font-normal">
+                Mitochondrial dysfunction and oxidative stress contribute to
+                neuronal damage.
+              </span>
+            </p>
 
-            <div className="flex items-start gap-3">
-              <Badge variant="outline" className="text-gray-600 bg-gray-100">🩹 Head Injuries</Badge>
-              <p className="text-gray-700">
-                Trauma or repeated <strong>head injuries</strong> may increase the risk of Parkinson’s.
-              </p>
-            </div>
+            <p className="text-gray-600 font-semibold">
+              Head Injuries:{" "}
+              <span className="text-gray-700 font-normal">
+                Trauma or head injuries may increase the risk of
+                Parkinson’s.
+              </span>
+            </p>
           </div>
-          {/* Learn More Button */}
-          <div className="flex justify-center mt-6">
-            <a
-              href="https://www.parkinson.org/Understanding-Parkinsons/Causes"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="outline" className="px-6 py-2 text-lg font-semibold">
-                Learn More
-              </Button>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+        </Card>
+      </div>
+    </>
   );
-}
+};

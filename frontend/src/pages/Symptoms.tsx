@@ -1,85 +1,90 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Separator } from "@/components/ui/separator";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import symptomsImage from '../assets/SymptomsImage.webp';
+import symptomsImage from "../assets/SymptomsImage.webp";
 
 export const Symptoms = () => {
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-6">
-      <Card className="shadow-xl border border-gray-300 bg-white rounded-lg">
-        <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-gray-900">
-            Symptoms of Parkinson’s Disease
-          </CardTitle>
-          <p className="text-gray-600 text-sm">Recognizing early signs to seek timely care</p>
-        </CardHeader>
-
-        <CardContent className="space-y-6">
-          {/* Image Section */}
-          <AspectRatio ratio={16 / 9} className="rounded-lg overflow-hidden">
-            <img
-              src={symptomsImage}
-              alt="Parkinson's Disease Symptoms"
-              className="w-full h-full"
-            />
-          </AspectRatio>
-
-          {/* Description */}
+    <>
+      <div className="w-full p-6 space-y-8 mt-16 flex flex-row items-center gap-5">
+        <Card className="w-1/2 mb-0 shadow-xl border border-gray-300 bg-gradient-to-r from-gray-300 to-gray-700 text-white text-center p-[51px] rounded-lg">
+          <CardHeader>
+            <CardTitle className="text-3xl font-bold">
+              Symptoms of Parkinson’s Disease
+            </CardTitle>
+            <p className="text-lg mt-0">
+              Recognizing early signs to seek timely care
+            </p>
+          </CardHeader>
+          <CardContent>
+            <AspectRatio ratio={16 / 9} className="rounded-lg overflow-hidden">
+              <img
+                src={symptomsImage}
+                alt="AI Diagnosis"
+                className="w-full h-full object-fit"
+              />
+            </AspectRatio>
+          </CardContent>
+        </Card>
+        <Card className="w-1/2 shadow-lg border border-gray-200 bg-white rounded-lg p-6">
           <p className="text-lg text-gray-700 leading-relaxed">
-            Parkinson’s disease affects <strong>movement and cognitive functions</strong> due to the loss of dopamine-producing neurons in the brain. Symptoms gradually worsen over time.
+            Parkinson’s disease affects{" "}
+            <strong>movement and cognitive functions</strong> due to the loss of
+            dopamine-producing neurons in the brain. Symptoms gradually worsen
+            over time.
           </p>
+          <div className="space-y-4 pb-[18px]">
+            <p className="text-red-600 font-semibold">
+              Tremors:{" "}
+              <span className="text-gray-700 font-normal">
+                Involuntary shaking, often in hands or fingers, noticeable at
+                rest.
+              </span>
+            </p>
 
-          <Separator />
+            <p className="text-blue-600 font-semibold">
+              Slowed Movement:{" "}
+              <span className="text-gray-700 font-normal">
+                Bradykinesia causes sluggish movements, making daily tasks
+                harder.
+              </span>
+            </p>
 
-          {/* Symptoms List */}
-          <div className="space-y-4">
-            <div className="flex items-start gap-3">
-              <Badge variant="outline" className="text-red-600 bg-red-100">🦵 Tremors</Badge>
-              <p className="text-gray-700">Involuntary shaking, often in hands or fingers, noticeable at rest.</p>
-            </div>
+            <p className="text-yellow-600 font-semibold">
+              Muscle Rigidity:{" "}
+              <span className="text-gray-700 font-normal">
+                Stiff muscles limit movement and may cause discomfort or pain.
+              </span>
+            </p>
 
-            <div className="flex items-start gap-3">
-              <Badge variant="outline" className="text-blue-600 bg-blue-100">🐢 Slowed Movement</Badge>
-              <p className="text-gray-700"><strong>Bradykinesia</strong> causes sluggish movements, making daily tasks harder.</p>
-            </div>
+            <p className="text-purple-600 font-semibold">
+              Postural Instability:{" "}
+              <span className="text-gray-700 font-normal">
+                Impaired balance and coordination increase the risk of falls.
+              </span>
+            </p>
 
-            <div className="flex items-start gap-3">
-              <Badge variant="outline" className="text-yellow-600 bg-yellow-100">⚖️ Muscle Rigidity</Badge>
-              <p className="text-gray-700">Stiff muscles limit movement and may cause discomfort or pain.</p>
-            </div>
+            <p className="text-green-600 font-semibold">
+              Facial Masking:{" "}
+              <span className="text-gray-700 font-normal">
+                Reduced facial expressions lead to a blank or emotionless look.
+              </span>
+            </p>
 
-            <div className="flex items-start gap-3">
-              <Badge variant="outline" className="text-purple-600 bg-purple-100">⚖️ Postural Instability</Badge>
-              <p className="text-gray-700">Impaired balance and coordination increase the risk of falls.</p>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <Badge variant="outline" className="text-green-600 bg-green-100">😐 Facial Masking</Badge>
-              <p className="text-gray-700">Reduced facial expressions lead to a blank or emotionless look.</p>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <Badge variant="outline" className="text-indigo-600 bg-indigo-100">💬 Speech Changes</Badge>
-              <p className="text-gray-700">Softer, slurred, or hesitant speech patterns make communication difficult.</p>
-            </div>
+            <p className="text-indigo-600 font-semibold">
+              Speech Changes:{" "}
+              <span className="text-gray-700 font-normal">
+                Softer, slurred, or hesitant speech patterns make difficult.
+              </span>
+            </p>
+            <p className="text-indigo-600 font-semibold">
+              Sleep Disturbances:{" "}
+              <span className="text-gray-700 font-normal">
+                Insomnia, restless legs, or vivid dreams can affect sleep.
+              </span>
+            </p>
           </div>
-
-          {/* Learn More Button */}
-          <div className="flex justify-center mt-6">
-            <a
-              href="https://www.parkinson.org/Understanding-Parkinsons/Symptoms"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="outline" className="px-6 py-2 text-lg font-semibold">
-                Learn More
-              </Button>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+        </Card>
+      </div>
+    </>
   );
 };

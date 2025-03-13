@@ -1,6 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import { Causes, Diagnosis, Lifestyle, Overview, Symptoms } from "./pages";
+import { Causes, Diagnosis, Lifestyle, Overview, Symptoms, Report } from "./pages";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
           <Route path="/causes" element={<Causes />} />
           <Route path="/diagnosis" element={<Diagnosis />} />
           <Route path="/lifestyle" element={<Lifestyle />} />
+          <Route path="/report" element={<Report />} />
         </Routes>
       </div>
     </div>
