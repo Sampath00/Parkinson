@@ -5,7 +5,7 @@ import diagnosisImage from "../assets/DiagnosisImage.webp";
 export const Diagnosis = () => {
   return (
     <>
-      <div className="w-full p-6 space-y-8 mt-16 flex flex-row items-center gap-5">
+      <Card className="w-full shadow-lg border border-gray-200 bg-white rounded-lg p-6 space-y-8 mt-24 flex flex-row items-center gap-5">
         <Card className="w-1/2 mb-0 shadow-xl border border-gray-300 bg-gradient-to-r from-blue-500 to-gray-700 text-white text-center p-[51px] rounded-lg">
           <CardHeader>
             <CardTitle className="text-3xl font-bold">
@@ -25,16 +25,12 @@ export const Diagnosis = () => {
             </AspectRatio>
           </CardContent>
         </Card>
-        <Card className="w-1/2 shadow-lg border border-gray-200 bg-white rounded-lg p-6">
+        <div className="w-1/2">
           <p className="text-lg text-gray-700 leading-relaxed">
             Diagnosing <strong>Parkinson’s disease</strong> is challenging as
-            there is no single test. It is based on{" "}
-            <strong>
-              clinical evaluation, medical history, and symptom analysis
-            </strong>
-            .
+            there is no single test. It is based on clinical evaluation, medical history, and symptom analysis
           </p>
-          <div className="space-y-4 pb-[15px]">
+          <div className="space-y-4 mt-4">
             <p className="text-blue-600 font-semibold">
               Neurological Exam:{" "}
               <span className="text-gray-700 font-normal">
@@ -84,8 +80,8 @@ export const Diagnosis = () => {
               </span>
             </p>
           </div>
-        </Card>
-      </div>
+        </div>
+      </Card>
     </>
   );
 };

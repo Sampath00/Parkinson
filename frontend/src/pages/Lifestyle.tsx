@@ -5,7 +5,7 @@ import lifeStyleImage from "../assets/LifeStyleImage.webp";
 export const Lifestyle = () => {
   return (
     <>
-      <div className="w-full p-6 space-y-8 mt-16 flex flex-row items-center gap-5">
+      <Card className="w-full shadow-lg border border-gray-200 bg-white rounded-lg p-6 space-y-8 mt-24 flex flex-row items-center gap-5">
         <Card className="w-1/2 mb-0 shadow-xl border border-gray-300 bg-gradient-to-r from-green-400 to-blue-500 text-white text-center p-[51px] rounded-lg">
           <CardHeader>
             <CardTitle className="text-3xl font-bold">
@@ -25,13 +25,13 @@ export const Lifestyle = () => {
             </AspectRatio>
           </CardContent>
         </Card>
-        <Card className="w-1/2 shadow-lg border border-gray-200 bg-white rounded-lg p-6">
+        <div className="w-1/2">
           <p className="text-lg text-gray-700 leading-relaxed">
             While Parkinson’s disease cannot be cured, adopting a{" "}
             <strong>healthy lifestyle</strong> can{" "}
             <strong>improve symptoms and enhance quality of life</strong>.
           </p>
-          <div className="space-y-4 pb-[26px]">
+          <div className="space-y-4 mt-4">
             <p className="text-green-600 font-semibold">
               Balanced Diet:{" "}
               <span className="text-gray-700 font-normal">
@@ -72,8 +72,8 @@ export const Lifestyle = () => {
               </span>
             </p>
           </div>
-        </Card>
-      </div>
+        </div>
+      </Card>
     </>
   );
 };

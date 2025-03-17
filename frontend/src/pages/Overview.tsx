@@ -67,15 +67,12 @@ export const Overview = () => {
 
     try {
       const endpoint =
-        fileType === "voice" ? "/detect/audio" : "/detect/spiral";
-      const response = await axios.post(
-        `http://localhost:8000${endpoint}`,
-        formData,
-        {
-          headers: { "Content-Type": "multipart/form-data" },
-        }
-      );
-
+        fileType === "voice" ? "/predict/voice" : "/predict/image";
+      const response = await axios.post(`api${endpoint}`, formData);
+      console.log(response);
+      const responseData = response.data.prediction;
+      const probability =
+        fileType === "voice" ? responseData.probability : responseData;
       toast.success("Analysis completed successfully!");
       localStorage.setItem(
         "reportData",
@@ -84,7 +81,8 @@ export const Overview = () => {
           lastName: data.lastName,
           age: data.age,
           gender: data.gender,
-          analysisResult: response.data.probability, // Store API response
+          fileType: fileType,
+          analysisResult: probability, // Store API response
         })
       );
       window.location.href = "/report";
@@ -98,12 +96,10 @@ export const Overview = () => {
   };
 
   return (
-    <div className="w-full p-6 space-y-8 mt-16 flex flex-row items-center gap-5">
-      {/* Toast Notifications */}
+    <Card className="w-full shadow-lg border border-gray-200 bg-white rounded-lg p-6 space-y-8 mt-24 flex flex-row items-center gap-5">
       <Toaster position="top-center" reverseOrder={false} />
 
-      {/* Hero Section */}
-      <Card className="w-full mb-0 shadow-xl border border-gray-300 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center p-[51px] rounded-lg">
+      <Card className="w-1/2 mb-0 shadow-xl border border-gray-300 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center p-[51px] rounded-lg">
         <CardHeader>
           <CardTitle className="text-3xl font-bold">
             Parkinson's Disease Detection
@@ -123,8 +119,7 @@ export const Overview = () => {
         </CardContent>
       </Card>
 
-      {/* Form Section */}
-      <Card className="w-full shadow-lg border border-gray-200 bg-white rounded-lg p-6">
+      <div className="w-1/2">
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-gray-900 text-center">
             Patient Information
@@ -279,11 +274,9 @@ export const Overview = () => {
             </form>
           </Form>
         </CardContent>
-      </Card>
-      <Loader loading={loading}/>
-
-
-    </div>
+      </div>
+      <Loader loading={loading} />
+    </Card>
   );
 };
 

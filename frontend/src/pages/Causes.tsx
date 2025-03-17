@@ -5,7 +5,7 @@ import CauseImage from "../assets/CausesImg.webp";
 export const Causes = () => {
   return (
     <>
-      <div className="w-full p-6 space-y-8 mt-16 flex flex-row items-center gap-5">
+      <Card className="w-full shadow-lg border border-gray-200 bg-white rounded-lg p-6 space-y-8 mt-24 flex flex-row items-center gap-5">
         <Card className="w-1/2 mb-0 shadow-xl border border-gray-300 bg-gradient-to-r from-purple-600 to-blue-900 text-white text-center p-[51px] rounded-lg">
           <CardHeader>
             <CardTitle className="text-3xl font-bold">
@@ -25,11 +25,11 @@ export const Causes = () => {
             </AspectRatio>
           </CardContent>
         </Card>
-        <Card className="w-1/2 shadow-lg border border-gray-200 bg-white rounded-lg p-6">
+        <div className="w-1/2">
           <p className="text-lg text-gray-700 leading-relaxed">
-          Parkinson’s disease arises from dopamine neuron loss, with genetic and environmental influences
+          Parkinson’s disease arises from <strong>dopamine neuron loss</strong>, with <strong>genetic</strong> and <strong>environmental influences</strong>
           </p>
-          <div className="space-y-4">
+          <div className="space-y-4 mt-4">
             <p className="text-blue-600 font-semibold">
               Genetic Mutations:{" "}
               <span className="text-gray-700 font-normal">
@@ -78,8 +78,8 @@ export const Causes = () => {
               </span>
             </p>
           </div>
-        </Card>
-      </div>
+        </div>
+      </Card>
     </>
   );
 };

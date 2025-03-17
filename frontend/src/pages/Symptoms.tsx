@@ -5,7 +5,7 @@ import symptomsImage from "../assets/SymptomsImage.webp";
 export const Symptoms = () => {
   return (
     <>
-      <div className="w-full p-6 space-y-8 mt-16 flex flex-row items-center gap-5">
+      <Card className="w-full shadow-lg border border-gray-200 bg-white rounded-lg p-6 space-y-8 mt-24 flex flex-row items-center gap-5">
         <Card className="w-1/2 mb-0 shadow-xl border border-gray-300 bg-gradient-to-r from-gray-300 to-gray-700 text-white text-center p-[51px] rounded-lg">
           <CardHeader>
             <CardTitle className="text-3xl font-bold">
@@ -25,14 +25,14 @@ export const Symptoms = () => {
             </AspectRatio>
           </CardContent>
         </Card>
-        <Card className="w-1/2 shadow-lg border border-gray-200 bg-white rounded-lg p-6">
+        <div className="w-1/2">
           <p className="text-lg text-gray-700 leading-relaxed">
             Parkinson’s disease affects{" "}
             <strong>movement and cognitive functions</strong> due to the loss of
             dopamine-producing neurons in the brain. Symptoms gradually worsen
             over time.
           </p>
-          <div className="space-y-4 pb-[18px]">
+          <div className="space-y-4 mt-4">
             <p className="text-red-600 font-semibold">
               Tremors:{" "}
               <span className="text-gray-700 font-normal">
@@ -83,8 +83,8 @@ export const Symptoms = () => {
               </span>
             </p>
           </div>
-        </Card>
-      </div>
+        </div>
+      </Card>
     </>
   );
 };
