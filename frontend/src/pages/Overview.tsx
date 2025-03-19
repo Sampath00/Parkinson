@@ -90,7 +90,7 @@ export const Overview = () => {
       try {
         const endpoint =
           fileType === "voice" ? "/predict/voice" : "/predict/image";
-        const response = await axios.post(`api${endpoint}`, formData);
+        const response = await axios.post(`http://localhost:8000${endpoint}`, formData);
         console.log(response);
         const responseData = response.data.prediction;
         const probability =
