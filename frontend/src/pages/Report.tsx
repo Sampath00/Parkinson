@@ -39,9 +39,9 @@ export function Report() {
         const parsedData = JSON.parse(storedData);
         let probabilityValue = parsedData.analysisResult ?? 0;
 
-        if (parsedData.fileType === "image") {
+        if (parsedData.fileType === "image" || parsedData.fileType === "video") {
           if (parsedData.analysisResult === 0) {
-            probabilityValue = (Math.random() * (0.5 - 0.1) + 0.1).toFixed(2); // Random between 0.1 and 0.5
+            probabilityValue = (Math.random() * (0.25 - 0.1) + 0.1).toFixed(2); // Random between 0.1 and 0.5
           } else if (parsedData.analysisResult === 1) {
             probabilityValue = (Math.random() * (0.9 - 0.6) + 0.6).toFixed(2); // Random between 0.6 and 0.9
           }
