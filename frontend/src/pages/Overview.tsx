@@ -123,7 +123,7 @@ export const Overview = () => {
     <Card className="w-full shadow-lg border border-gray-200 bg-white rounded-lg p-6 space-y-8 mt-24 flex flex-row items-center gap-5">
       <Toaster position="top-center" reverseOrder={false} />
 
-      <Card className="w-3/7 mb-0 shadow-xl border border-gray-300 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center p-[51px] rounded-lg">
+      <Card className="w-1/2 mb-0 shadow-xl border border-gray-300 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center p-[51px] rounded-lg">
         <CardHeader>
           <CardTitle className="text-3xl font-bold">
             Parkinson's Disease Detection
@@ -143,7 +143,7 @@ export const Overview = () => {
         </CardContent>
       </Card>
 
-      <div className="w-4/7">
+      <div className="w-1/2">
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-gray-900 text-center">
             Patient Information
@@ -243,38 +243,6 @@ export const Overview = () => {
                             onChange={(e) => {
                               field.onChange(e.target.files?.[0]);
                               setFileType("voice");
-                              toast.success("File uploaded successfully!");
-                            }}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div className="mx-6 flex items-center justify-center text-3xl font-semibold text-gray-700">
-                  OR
-                </div>
-                {/* Image Analysis */}
-                <div className="flex flex-col items-center">
-                  <img
-                    src={ImageAnalysis}
-                    alt="Image Analysis"
-                    className="w-28 h-28 object-cover"
-                  />
-                  <FormField
-                    control={form.control}
-                    name="file"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Upload for Image Analysis</FormLabel>
-                        <FormControl>
-                          <Input
-                            type="file"
-                            accept="image/*"
-                            onChange={(e) => {
-                              field.onChange(e.target.files?.[0]);
-                              setFileType("image");
                               toast.success("File uploaded successfully!");
                             }}
                           />
