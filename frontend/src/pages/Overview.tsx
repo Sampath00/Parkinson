@@ -26,6 +26,7 @@ import VideoAnalysis from "../assets/video-channel.gif";
 import axios from "axios";
 import { useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 interface FormData {
   firstName: string;
@@ -46,7 +47,7 @@ export const Overview = () => {
     },
     mode: "onBlur",
   });
-
+  const navigate = useNavigate();
   const [fileType, setFileType] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -84,7 +85,7 @@ export const Overview = () => {
       );
     
       setTimeout(() => {
-        window.location.href = "/report";
+        navigate("/report");
       }, 1000);
     } else {
       try {
@@ -107,7 +108,7 @@ export const Overview = () => {
             analysisResult: probability, // Store API response
           })
         );
-        window.location.href = "/report";
+        navigate("/report");
         console.log(response);
       } catch (err) {
         toast.error("Error uploading file. Please try again.");
